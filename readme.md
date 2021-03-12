@@ -1,4 +1,4 @@
-#Introduction to webpack
+# Introduction to webpack
 
 Web 应用包含大量的 .js, .css, .jpg 等资源，Webpack 将每个资源都视为一个模块，分析处理它们之间的依赖关系，并将它们进行打包。
 
