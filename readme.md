@@ -56,3 +56,13 @@ template 用来书写组件模板，script用来配置 组件 vue 实例，style
 打包会用到 webpack-merge 和 html-webpack-plugin 两个依赖
 <code>npm install webpack-merge html-webpack-plugin -D</code>
 webpack-merge 就是用来 merge 不同的 webpack 配置文件。 html-webpack-plugin 是用来生成 html 文件的
+
+## 前端路由
+基于前后端分离的开发模式，后端专注于数据，前端负责 HTML 和用户交互。前端通过 axios 从后端获取数据，然后以一定的方式渲染到页面里。
+单页面应用(SPA), 就是在此基础上，再加上前端路由。
+前端路由，即由前端来维护一个路由规则。单页面即指只有一个 html文件，整个网站的所有内容都在这个 html 文件里，通过 JavaScript 来处理
+
+### Vue-router
+vue 可以通过特殊的 component tag 和 is 属性来动态的切换组件，vue-router 的实现与之类似，不同路由的不同页面事实上就是加载不同的组件。
+<code>npm install vue-router --save</code>
+
