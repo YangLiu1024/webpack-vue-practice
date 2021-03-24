@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import EventBus from '../event-bus/index.js'
+
 export default {
     props: {
         color: {
@@ -20,6 +22,8 @@ export default {
     methods: {
         handleClick() {
             this.$emit('on-click')
+            EventBus.$emit('event-bus')
+            this.$store.dispatch('asyncIncrease')
         }
     }
 }

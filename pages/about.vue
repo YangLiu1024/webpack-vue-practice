@@ -1,9 +1,13 @@
 <template>
-    <div>About page</div>
+    <div>About page {{oddList}}</div>
 </template>
 
 <script>
 export default {
-    
+    computed: {
+        oddList() {
+            return this.$store.getters.oddList
+        }
+    }
 }
 </script>
