@@ -16,7 +16,7 @@ const install = function(Vue) {
         }
     })
 
-    Vue.prototype.bus = Bus;
+    Vue.prototype.$bus = Bus;
 }
 
 export default install;
