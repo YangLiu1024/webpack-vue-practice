@@ -3,6 +3,9 @@ import App from './pages/app.vue'
 
 import router from './router/index.js'
 import store from './vuex'
+import Bus from './event-bus'
+
+Vue.use(Bus)
 
 new Vue({
     el: "#app",

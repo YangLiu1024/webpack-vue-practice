@@ -11,7 +11,7 @@ export default {
             return this.$store.state.count
         }
     },
-    mounted() {
+    created() {
         console.log('Help component mounted')
         function handleEventBus() {
             console.log('Help component handle event bus')

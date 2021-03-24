@@ -22,8 +22,11 @@ export default {
     methods: {
         handleClick() {
             this.$emit('on-click')
+            //emit event through event bus
             EventBus.$emit('event-bus')
             this.$store.dispatch('asyncIncrease')
+            //emit event through event bus plugin
+            this.$bus.emit('event-bus-plugin')
         }
     }
 }
