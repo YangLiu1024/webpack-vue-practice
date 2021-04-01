@@ -1,5 +1,5 @@
 var path = require('path')
-var MiniCssExtractPlugin = require('mini-css-extract-plugin')
+//var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const {VueLoaderPlugin} = require('vue-loader')
 
 process.env.NODE_ENV = 'development'
@@ -34,7 +34,8 @@ var config = {
                     //对于 vue 文件里的 <stype scoped>, 最后生成的 HTML 里，对应标签上会带有 data-v-*****, 且在 main.css 里可以找到 带有对应 data-v-**** 的 css 样式
                     //这是因为这个 style 是 组件独有的，会打上对应的 标签来区分
                     //如果去掉 scoped, 则设置的 css 样式全局可用，则最后生成的 HTML 里就不会有这样的标签
-                    process.env.NODE_ENV !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+                    //process.env.NODE_ENV !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+                    'vue-style-loader',
                     'css-loader'
                 ]
             }, 
@@ -73,9 +74,9 @@ var config = {
         //vue loader plugin 可以把你已经定义的其它 rule apply 到 vue 文件里，比如，如果你已经定义了 css和 js 的 loader
         //那么 VueLoaderPlugin 就可以把这些rule apply 到 vue 文件里的 script 和 style 部分
         new VueLoaderPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'main.css'
-        })//将提取后的 css文件命名为 main.css
+        // new MiniCssExtractPlugin({
+        //     filename: 'main.css'
+        // })//将提取后的 css文件命名为 main.css
     ],
     // [Vue warn]: You are using the runtime-only build of Vue where the template option is not available. 
     // Either pre-compile the templates into render functions, or use the compiler-included build.
